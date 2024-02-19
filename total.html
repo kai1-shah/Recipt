@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donation Page</title>
+<style>
+    /* Add your CSS styles here */
+    h1{
+        padding-top: 0px;
+        margin-top: 0%;
+        font-size: 45px;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color:ivory;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    input[type="number"] {
+
+        width: 80px;
+        
+        margin: 10px;
+        
+    }
+    #total {
+        font-weight: bold;
+        display: flex;
+        justify-content: end;
+    }
+    .totals{
+        display: flex;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+    
+    <center>
+        <h1>Donations</h1>
+        
+    <label for="cause1">Cause 1:</label>
+    <input type="number" id="cause1"><br>
+    <label for="cause2">Cause 2:</label>
+    <input type="number" id="cause2"><br>
+    <!-- Add fields for cause3 to cause7 similarly -->
+    <label for="cause3">Cause 3:</label>
+    <input type="number" id="cause3"><br>
+    <label for="cause4">Cause 4:</label>
+    <input type="number" id="cause4"><br>
+    <label for="cause5">Cause 5:</label>
+    <input type="number" id="cause5"><br>
+    <label for="cause6">Cause 6:</label>
+    <input type="number" id="cause6"><br>
+    <label for="cause7">Cause 7:</label>
+    <input type="number" id="cause7"><br>
+    
+
+    <button onclick="calculateTotal()">Get Total</button>
+    <br><br>
+    
+    <div class="totals">Total Amount: <span id="total"></span></div>
+    </center>
+
+    <script>
+        function calculateTotal() {
+            let totalAmount = 0;
+            for (let i = 1; i <= 7; i++) {
+                let causeAmount = parseFloat(document.getElementById('cause' + i).value) || 0;
+                totalAmount += causeAmount;
+            }
+            document.getElementById('total').textContent = totalAmount;
+        }
+    </script>
+</body>
+</html>
+
+
+
+ 
